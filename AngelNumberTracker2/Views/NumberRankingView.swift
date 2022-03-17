@@ -1,0 +1,76 @@
+//
+//  ContentView.swift
+//  AngelNumberTracker2
+//
+//  Created by Eesha Moona on 3/16/22.
+//
+
+import SwiftUI
+
+struct NumberRankingView: View {
+    @State private var isShowingSheet = false
+    
+    var numberInput : [Number] = [
+        Number(number: "1234", definition: "You are making progress!", timeSeen: 37),
+        Number(number: "234", definition: "The universe is proud of you!", timeSeen: 20),
+        Number(number: "1111", definition: "Make a wish!", timeSeen: 19),
+        Number(number: "333", definition: "Keep your eyes open for opportunties!", timeSeen: 10),
+        Number(number: "555", definition: "Be careful and be prepared!", timeSeen: 4)
+    ]
+    
+    var body: some View {
+        ZStack {
+            //Background
+            BackgroundView()
+            
+            VStack {
+                //Title Text
+                Text("Angel Numbers")
+                    .font(.system(size: 50, design: .rounded))
+                    .fontWeight(.thin)
+                    .foregroundColor(Color.black.opacity(0.8))
+                
+                //Filter Menu
+                //TODO: Connect to actual data
+                FilterMenuView()
+                    .padding(.top, -20)
+                
+                Spacer()
+                
+                //Display all number items
+                ScrollView{
+                    ForEach(numberInput) { num in
+                        NumberItemView(num:num)
+                                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y:10)
+                                .padding([.leading, .trailing],35)
+                                .padding(.top, 10)
+                    }
+                }
+                
+                //Opening Keypad
+                Button(action: {
+                        isShowingSheet.toggle()
+                }) {
+                    ZStack {
+                        Circle()
+                            .fill(Color("myYellow").opacity(0.8))
+                            .frame(width:60, height:60)
+                        Text ("+")
+                            .font(.largeTitle)
+                            .foregroundColor(Color.black.opacity(0.7))
+                    }
+                }.offset(y:-40)
+                .sheet(isPresented: $isShowingSheet) {
+                    AngelNumberEntry()
+                }
+            }
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        NumberRankingView()
+    }
+}
