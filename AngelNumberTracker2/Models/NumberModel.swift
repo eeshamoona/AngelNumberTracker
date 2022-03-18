@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct Number: Identifiable {
-    let id : String = UUID().uuidString
+struct Number: Identifiable, Codable {
+    var id : String = UUID().uuidString
     let number : String
     let definition : String
     let timeSeen : Int
+    
 }

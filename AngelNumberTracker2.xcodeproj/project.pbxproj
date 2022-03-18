@@ -19,6 +19,7 @@
 		A94B7C7E27E31FCE00A04BCC /* ScrollAcceptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B7C7D27E31FCE00A04BCC /* ScrollAcceptView.swift */; };
 		A94B7C8027E3216600A04BCC /* AngelNumberEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B7C7F27E3216600A04BCC /* AngelNumberEntry.swift */; };
 		A94B7C8227E32AD100A04BCC /* Background2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B7C8127E32AD100A04BCC /* Background2View.swift */; };
+		A9C7873627E3B3BB00EB3049 /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7873527E3B3BB00EB3049 /* NumberViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		A94B7C7D27E31FCE00A04BCC /* ScrollAcceptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollAcceptView.swift; sourceTree = "<group>"; };
 		A94B7C7F27E3216600A04BCC /* AngelNumberEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelNumberEntry.swift; sourceTree = "<group>"; };
 		A94B7C8127E32AD100A04BCC /* Background2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background2View.swift; sourceTree = "<group>"; };
+		A9C7873527E3B3BB00EB3049 /* NumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		A94B7C7227E2D97700A04BCC /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A9C7873527E3B3BB00EB3049 /* NumberViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A94B7C7A27E319A800A04BCC /* BackgroundView.swift in Sources */,
+				A9C7873627E3B3BB00EB3049 /* NumberViewModel.swift in Sources */,
 				A94B7C8227E32AD100A04BCC /* Background2View.swift in Sources */,
 				A94B7C8027E3216600A04BCC /* AngelNumberEntry.swift in Sources */,
 				A94B7C7C27E319DA00A04BCC /* FilterMenuView.swift in Sources */,

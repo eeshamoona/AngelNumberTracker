@@ -14,11 +14,12 @@ struct ScrollAcceptView : View {
     @Binding var saving : Bool
     @Binding var chosenNumber : String
     
+    @EnvironmentObject var angelNumberViewModel : NumberViewModel
     var circleWidth : CGFloat = 75
     var body : some View {
         ZStack {
             Capsule()
-                .fill(Color.white.opacity(0.4))
+                .fill(Color.white.opacity(0.3))
                 .frame(width: 300, height: 75)
                 .overlay(
                     Capsule()
@@ -93,8 +94,9 @@ func onEnd (value: DragGesture.Value) {
         if slideOffset > (maxWidth/2) {
             slideOffset = maxWidth - 65
             
-            //TODO: WRITE TO SOMETHING!
-                        
+            angelNumberViewModel.incrementTimesSeenFor(angelNum: chosenNumber)
+            angelNumberViewModel.nums = (angelNumberViewModel.sortList()!)
+            
             withAnimation(Animation.easeOut(duration: 1.5)){
                 saving = true
             }

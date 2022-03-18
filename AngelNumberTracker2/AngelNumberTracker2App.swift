@@ -13,9 +13,16 @@ import SwiftUI
 
 @main
 struct AngelNumberTracker2App: App {
+    @StateObject var angelNumberViewModel : NumberViewModel = NumberViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            NumberRankingView()
+            NavigationView{
+                NumberRankingView()
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+            }
+            .environmentObject(angelNumberViewModel)
         }
     }
 }

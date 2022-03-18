@@ -9,14 +9,7 @@ import SwiftUI
 
 struct NumberRankingView: View {
     @State private var isShowingSheet = false
-    
-    var numberInput : [Number] = [
-        Number(number: "1234", definition: "You are making progress!", timeSeen: 37),
-        Number(number: "234", definition: "The universe is proud of you!", timeSeen: 20),
-        Number(number: "1111", definition: "Make a wish!", timeSeen: 19),
-        Number(number: "333", definition: "Keep your eyes open for opportunties!", timeSeen: 10),
-        Number(number: "555", definition: "Be careful and be prepared!", timeSeen: 4)
-    ]
+    @EnvironmentObject var angelNumberViewModel : NumberViewModel
     
     var body: some View {
         ZStack {
@@ -39,7 +32,7 @@ struct NumberRankingView: View {
                 
                 //Display all number items
                 ScrollView{
-                    ForEach(numberInput) { num in
+                    ForEach(angelNumberViewModel.nums) { num in
                         NumberItemView(num:num)
                                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                                 .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y:10)

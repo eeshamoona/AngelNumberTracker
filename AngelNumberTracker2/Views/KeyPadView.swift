@@ -30,7 +30,20 @@ struct KeyPadView: View {
                         KeyPadButton(number:"9", chosenNumber: $chosenNumber )
                         
                     }.padding(.top,10)
-                    KeyPadButton(number:"0", chosenNumber: $chosenNumber ).padding(.top,10)
+                    HStack(spacing: 20){
+                        Text("")
+                            .frame(width: 90, height: 90,alignment: .center)
+                        KeyPadButton(number:"0", chosenNumber: $chosenNumber )
+                        Button (action:{
+                            chosenNumber = String(chosenNumber.dropLast())
+                        }) {
+                            Image(systemName: "delete.backward")
+                                .font(.largeTitle)
+                                .foregroundColor(Color.black.opacity(0.8))
+                                .frame(width: 90, height: 90,alignment: .center)
+                        }
+                        
+                    }.padding(.top,10)
                 }
             }.padding(.all, 20)
         }
@@ -48,7 +61,7 @@ struct KeyPadButton : View {
             ZStack{
                 Circle()
                     .frame(width: 90, height: 90)
-                    .foregroundColor(Color.white.opacity(0.5))
+                    .foregroundColor(Color.white.opacity(0.4))
                     .blur(radius: 1)
                 Text(number)
                     .foregroundColor(Color.black)
